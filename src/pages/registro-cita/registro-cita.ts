@@ -16,11 +16,13 @@ import { TraerdatosProvider } from '../../providers/traerdatos/traerdatos';
 export class RegistroCitaPage {
   
   tipoMedico:any;
-  nomespecialidad:any;  
+  medicosEspecialistas:any;
+  nomespecialidad:any; 
+  agendaMedicoDia:any; 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public d:TraerdatosProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public webservice:TraerdatosProvider) {
      this.tipoMedico="esp";
-        this.d.getespecialidad().subscribe(rs=>{
+        this.webservice.getespecialidad().subscribe(rs=>{
       this.nomespecialidad=rs;
       console.log(this.nomespecialidad.title);
     });
@@ -32,5 +34,17 @@ export class RegistroCitaPage {
     
     console.log('ionViewDidLoad RegistroCitaPage');
   }
+   
+  optionSelected(idespecialidad){
+   console.log(idespecialidad);
+   this.webservice.getmedicoespecilista(idespecialidad).subscribe(rs=>{
+    this.medicosEspecialistas=rs;
+   });
+  }
 
+  selectDiaMedico(idmedico){
+   this.webservice.getdiagendamedico(idmedico).subscribe(rs=>{
+    this.agendaMedicoDia=rs;
+   });
+  }
 }

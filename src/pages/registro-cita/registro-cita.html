@@ -33,32 +33,22 @@
       <ion-item *ngIf="tipoMedico=='esp'">
           <ion-label>Especialidad</ion-label>
          
-          <ion-select >
-            <ion-option *ngFor="let m of nomespecialidad" value="{{m.id}}">{{m.especialidad}}</ion-option>            
+          <ion-select [ngModel]="selectedDevice" (ngModelChange)="optionSelected($event)">
+            <ion-option  *ngFor="let m of nomespecialidad"  [value]="m.id">{{m.especialidad}}</ion-option>            
           </ion-select>
         </ion-item>
 
       <ion-item>
           <ion-label>Medicos</ion-label>
-          <ion-select>
-            <ion-option value="nes">NES</ion-option>
-            <ion-option value="n64">Nintendo64</ion-option>
-            <ion-option value="ps">PlayStation</ion-option>
-            <ion-option value="genesis">Sega Genesis</ion-option>
-            <ion-option value="saturn">Sega Saturn</ion-option>
-            <ion-option value="snes">SNES</ion-option>
-          </ion-select>
+          <ion-select [ngModel]="selectedDevice" (ngModelChange)="selectDiaMedico($event)">
+            <ion-option *ngFor="let medEsp of medicosEspecialistas"  [value]="medEsp.id">{{medEsp.nombre +" "+medEsp.apellido}}</ion-option>
+            </ion-select>
         </ion-item>
 
         <ion-item>
             <ion-label>Dia</ion-label>
-            <ion-select>
-              <ion-option value="nes">Lunes</ion-option>
-              <ion-option value="n64">Martes</ion-option>
-              <ion-option value="ps">Miercoles</ion-option>
-              <ion-option value="genesis">Jueves</ion-option>
-              <ion-option value="saturn">Viernes</ion-option>
-              <ion-option value="snes">Sabado</ion-option>
+            <ion-select [ngModel]="selectedDevice">
+              <ion-option *ngFor="let diatrabajomedico of agendaMedicoDia"  [value]="diatrabajomedico.dia">{{diatrabajomedico.dia}}</ion-option>
             </ion-select>
           </ion-item>
         

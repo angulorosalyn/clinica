@@ -28,4 +28,9 @@ export class TraerdatosProvider {
     return this.http.get(this.api+'medicos.php?especialidad='+id).map(res=>res.json());
    }
 
+   getdiagendamedico(idmedico){
+    ///console.log(this.http.get('https://jsonplaceholder.typicode.com/posts').map(res=>res.json()));
+    return this.http.get(this.api+'agendamedica.php?idmedico='+idmedico).map(res=>res.json());
+   }
+
 }
