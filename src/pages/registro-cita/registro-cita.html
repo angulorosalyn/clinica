@@ -47,14 +47,21 @@
 
         <ion-item>
             <ion-label>Dia</ion-label>
-            <ion-select [ngModel]="selectedDevice">
+            <ion-select [ngModel]="selectedDevice" (ngModelChange)="horario_medico($event)">
               <ion-option *ngFor="let diatrabajomedico of agendaMedicoDia"  [value]="diatrabajomedico.dia">{{diatrabajomedico.dia}}</ion-option>
             </ion-select>
           </ion-item>
         
-          <ion-list>
-              <ion-item>
-                <div>FECHA</div><div>CONSULTORIO</div><div>FECHA</div>
-              </ion-item>
-            </ion-list>
+          <div class="row header">
+            <div class="col">Medico</div>
+            <div class="col">Horario</div>
+            <div class="col">Consultorio</div>
+            <div class="col"></div>
+          </div>
+          <div class="row" *ngFor="let medicohorario of horario">
+              <div class="col">{{medicohorario.medico}}</div>
+            <div class="col">{{medicohorario.horainicial}}</div>
+            <div class="col">{{medicohorario.consultorio}}</div>
+            <div class="col"><button  ion-button color="secondary" ng-click=""><ion-icon name="add-circle"></ion-icon> Add</button></div>
+          </div>
 </ion-content>

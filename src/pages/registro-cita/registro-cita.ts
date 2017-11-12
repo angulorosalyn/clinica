@@ -18,7 +18,9 @@ export class RegistroCitaPage {
   tipoMedico:any;
   medicosEspecialistas:any;
   nomespecialidad:any; 
-  agendaMedicoDia:any; 
+  agendaMedicoDia:any;
+  idmedico_arg:number; 
+  horario:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public webservice:TraerdatosProvider) {
      this.tipoMedico="esp";
@@ -43,8 +45,16 @@ export class RegistroCitaPage {
   }
 
   selectDiaMedico(idmedico){
+      this.idmedico_arg=idmedico;
    this.webservice.getdiagendamedico(idmedico).subscribe(rs=>{
     this.agendaMedicoDia=rs;
    });
+  }
+
+  horario_medico(dia){
+    console.log(dia+" "+this.idmedico_arg);
+    this.webservice.horaioMedico(this.idmedico_arg,dia).subscribe(rs=>{
+      this.horario=rs;
+     });
   }
 }
