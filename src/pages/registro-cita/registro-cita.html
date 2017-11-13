@@ -62,6 +62,6 @@
               <div class="col">{{medicohorario.medico}}</div>
             <div class="col">{{medicohorario.horainicial}}</div>
             <div class="col">{{medicohorario.consultorio}}</div>
-            <div class="col"><button  ion-button color="secondary" ng-click=""><ion-icon name="add-circle"></ion-icon> Add</button></div>
+            <div class="col"><button  ion-button color="secondary" (click)="reservarCita(medicohorario.idagenda)"><ion-icon name="add-circle"></ion-icon> Add</button></div>
           </div>
 </ion-content>

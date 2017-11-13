@@ -57,4 +57,13 @@ export class RegistroCitaPage {
       this.horario=rs;
      });
   }
+
+  reservarCita(idagenda){
+   console.log("idagenda"+idagenda);
+   this.webservice.resgistrarReserva(idagenda).subscribe(rs=>{
+    
+   });
+  }
+
+
 }
