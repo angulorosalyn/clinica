@@ -8,10 +8,13 @@
     <ion-list>
         
           <ion-item>
-            <ion-input type="text" placeholder="Documeto"></ion-input>
+            <ion-input [(ngModel)]="usuariodocu" type="text" placeholder="Documeto"></ion-input>
           </ion-item>
         
-         
+         <ion-item *ngFor="let usu of reslogin">
+          {{usu.nombre}}   
+         </ion-item>
+  
         </ion-list>
         <button ion-button full (click)="irMenuOpp()">Buscar</button>
         <button ion-button full (click)="registro()">Registrarse</button>
