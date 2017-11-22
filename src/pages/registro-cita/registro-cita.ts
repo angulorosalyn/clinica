@@ -21,9 +21,10 @@ export class RegistroCitaPage {
   agendaMedicoDia:any;
   idmedico_arg:number; 
   horario:any;
-
+persona_id:any;
   constructor(public navCtrl: NavController, public navParams: NavParams,public webservice:TraerdatosProvider) {
      this.tipoMedico="esp";
+      this.persona_id= navParams.get("id");
         this.webservice.getespecialidad().subscribe(rs=>{
       this.nomespecialidad=rs;
       console.log(this.nomespecialidad.title);
@@ -60,7 +61,7 @@ export class RegistroCitaPage {
 
   reservarCita(idagenda){
    console.log("idagenda"+idagenda);
-   this.webservice.resgistrarReserva(idagenda).subscribe(rs=>{
+   this.webservice.resgistrarReserva(idagenda,this.persona_id).subscribe(rs=>{
     
    });
   }

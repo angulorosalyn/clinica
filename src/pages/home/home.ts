@@ -15,6 +15,7 @@ import{RegistroPersonaPage} from '../registro-persona/registro-persona'
 export class HomePage {  
   usuariodocu:any;
   reslogin:any;
+  idp:any;
   constructor(public navCtrl: NavController, private prov: TraerdatosProvider, private alert:AlertController) {    
       
   }
@@ -27,14 +28,18 @@ export class HomePage {
       });
       
       let cedulaDB;
+      
        this.prov.logueo(this.usuariodocu).subscribe(rs=>{
         this.reslogin=rs;
         for(let dato of rs){
              cedulaDB= dato.validar;
+             this.idp=dato.id;
+
         }
 
         if(cedulaDB=='ok'){
-             this.navCtrl.push(MenuOpcionesPage); 
+          console.log("id"+this.idp);
+             this.navCtrl.push(MenuOpcionesPage,{id:this.idp}); 
         }else{
           alert.present();
         }

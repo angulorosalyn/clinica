@@ -38,10 +38,10 @@ export class TraerdatosProvider {
     return this.http.get(this.api+'horariomedico.php?idmedico='+idmedico+'&dia='+dia).map(res=>res.json());
    }
 
-   resgistrarReserva(idagenda){
+   resgistrarReserva(idagenda,id){
     ///console.log(this.http.get('https://jsonplaceholder.typicode.com/posts').map(res=>res.json()));
    // return this.http.get(this.api+'resgistroReserva.php?idpaciente='+idpaciente+'&idagenda='+idagenda).map(res=>res.json());
-    return this.http.get(this.api+'resgistrarReseva.php?idpaciente=4&idagenda='+idagenda);
+    return this.http.get(this.api+'resgistrarReseva.php?cedula='+id+'&idagenda='+idagenda);
     
   }
 

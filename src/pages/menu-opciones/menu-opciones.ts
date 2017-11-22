@@ -14,14 +14,15 @@ import{RegistroCitaPage} from '../registro-cita/registro-cita';
   templateUrl: 'menu-opciones.html',
 })
 export class MenuOpcionesPage {
-
+  idp:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.idp=navParams.get("id");
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuOpcionesPage');
   }
   regcita(){
-  this.navCtrl.push(RegistroCitaPage);
+  this.navCtrl.push(RegistroCitaPage,{id:this.idp});
   }
 }
