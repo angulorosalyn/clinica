@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AlertController,ToastController } from 'ionic-angular';
 import { TraerdatosProvider } from '../../providers/traerdatos/traerdatos';
 /**
  * Generated class for the RegistroCitaPage page.
@@ -20,9 +21,10 @@ export class RegistroCitaPage {
   nomespecialidad:any; 
   agendaMedicoDia:any;
   idmedico_arg:number; 
-  horario:any;
+  horario:any[]=[];
 persona_id:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public webservice:TraerdatosProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public webservice:TraerdatosProvider,private alert:AlertController,
+  private toast:ToastController) {
      this.tipoMedico="esp";
       this.persona_id= navParams.get("id");
         this.webservice.getespecialidad().subscribe(rs=>{
@@ -40,6 +42,8 @@ persona_id:any;
    
   optionSelected(idespecialidad){
    console.log(idespecialidad);
+   this.horario=[];
+   this.agendaMedicoDia=[];
    this.webservice.getmedicoespecilista(idespecialidad).subscribe(rs=>{
     this.medicosEspecialistas=rs;
    });
@@ -61,9 +65,33 @@ persona_id:any;
 
   reservarCita(idagenda){
    console.log("idagenda"+idagenda);
-   this.webservice.resgistrarReserva(idagenda,this.persona_id).subscribe(rs=>{
-    
-   });
+    let toast=this.toast.create({
+      message:'se ha reservado su cita',
+      duration:3000,
+      position:'top'
+    });
+
+   
+   let alert = this.alert.create({
+    title: 'Confirmar Cita',
+    subTitle: 'Esta seguro que desea reservar esta cita',
+    buttons: [{
+      text:'Cancelar',
+      role:'cancel',
+      handler:()=>{
+
+      }
+    },{
+      text:'Reservar',
+      handler:()=>{ this.webservice.resgistrarReserva(idagenda,this.persona_id).subscribe(rs=>{ 
+        toast.onDidDismiss(()=>{});
+        toast.present();
+        this.navCtrl.pop();
+      });}
+    }]
+  });
+  alert.present();
+   
   }
 
 
