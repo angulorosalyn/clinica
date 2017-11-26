@@ -19,7 +19,7 @@ export class RegistroCitaPage {
   tipoMedico:any;
   medicosEspecialistas:any;
   nomespecialidad:any; 
-  agendaMedicoDia:any;
+  agendaMedicoDia:any[]=[];
   idmedico_arg:number; 
   horario:any[]=[];
 persona_id:any;
@@ -50,14 +50,18 @@ persona_id:any;
   }
 
   selectDiaMedico(idmedico){
+    this.horario=[];
+    this.agendaMedicoDia=[];
       this.idmedico_arg=idmedico;
    this.webservice.getdiagendamedico(idmedico).subscribe(rs=>{
+    
     this.agendaMedicoDia=rs;
    });
   }
 
   horario_medico(dia){
     console.log(dia+" "+this.idmedico_arg);
+    
     this.webservice.horaioMedico(this.idmedico_arg,dia).subscribe(rs=>{
       this.horario=rs;
      });

@@ -49,4 +49,9 @@ export class TraerdatosProvider {
     return this.http.get(this.api+'buscarusuario.php?documentoPersona='+doc).map(res=>res.json());
     }
 
+    verReservas(idpaciente){
+      return this.http.get(this.api+'verreservas.php?idpaciente='+idpaciente).map(res=>res.json());
+      
+    }
+
 }

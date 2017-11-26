@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import{RegistroCitaPage} from '../registro-cita/registro-cita';
+import{ConsultaReservadasPage} from '../consulta-reservadas/consulta-reservadas';
 /**
  * Generated class for the MenuOpcionesPage page.
  *
@@ -24,5 +25,9 @@ export class MenuOpcionesPage {
   }
   regcita(){
   this.navCtrl.push(RegistroCitaPage,{id:this.idp});
+  }
+
+  irconsultas(){
+    this.navCtrl.push(ConsultaReservadasPage,{id:this.idp});
   }
 }

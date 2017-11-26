@@ -10,10 +10,12 @@ import { MenuOpcionesPage } from '../pages/menu-opciones/menu-opciones';
 import { TraerdatosProvider } from '../providers/traerdatos/traerdatos';
 import{RegistroPersonaPage} from '../pages/registro-persona/registro-persona';
 import{RegistroCitaPage} from '../pages/registro-cita/registro-cita';
+import{ConsultaReservadasPage} from '../pages/consulta-reservadas/consulta-reservadas';
+
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,MenuOpcionesPage,RegistroPersonaPage,RegistroCitaPage
+    HomePage,MenuOpcionesPage,RegistroPersonaPage,RegistroCitaPage,ConsultaReservadasPage
   ],
   imports: [
     BrowserModule,HttpModule,
@@ -22,7 +24,7 @@ import{RegistroCitaPage} from '../pages/registro-cita/registro-cita';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,MenuOpcionesPage,RegistroPersonaPage,RegistroCitaPage
+    HomePage,MenuOpcionesPage,RegistroPersonaPage,RegistroCitaPage,ConsultaReservadasPage
   ],
   providers: [
     StatusBar,
