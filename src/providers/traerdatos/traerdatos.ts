@@ -54,4 +54,9 @@ export class TraerdatosProvider {
       
     }
 
+    cancelarReserva(id,idagenda){
+
+      return this.http.get(this.api+'cancelarReserva.php?idreserva='+id+'&idagenda='+idagenda);
+      
+    }
 }

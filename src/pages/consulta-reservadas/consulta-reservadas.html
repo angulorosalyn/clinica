@@ -21,7 +21,7 @@
         <div class="col">Consultorio</div>
         <div class="col">Fecha</div>
         <div class="col">Hora</div>
-        <div class="col" >Estado</div>
+        
         <div class="col"></div>
       </div>
       <div class="row" *ngFor="let reservas of listReservas">
@@ -29,8 +29,8 @@
         <div class="col">{{ reservas.consultorio }}</div>
         <div class="col">{{reservas.fecha}}</div>
         <div class="col">{{reservas.horainicial}}</div>
-        <div class="col">...</div>
-        <div class="col"><button  ion-button color="secondary" (click)="cancelarReserva()"><ion-icon name="add-circle"></ion-icon> Cancelar</button></div>
+        
+        <div class="col"><button  ion-button color="secondary" (click)="cancelarReserva(reservas.idreserva,reservas.idagenda)"><ion-icon name="add-circle"></ion-icon> Cancelar</button></div>
       </div>
 
 </ion-content>

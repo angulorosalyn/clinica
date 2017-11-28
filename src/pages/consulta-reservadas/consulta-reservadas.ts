@@ -32,4 +32,11 @@ export class ConsultaReservadasPage {
     console.log('ionViewDidLoad ConsultaReservadasPage');
   }
 
+  cancelarReserva(id,idagenda){
+
+    this.webservice.cancelarReserva(id,idagenda).subscribe(rs=>{
+      
+     });
+  }
+
 }
