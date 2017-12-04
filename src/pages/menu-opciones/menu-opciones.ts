@@ -20,6 +20,7 @@ export class MenuOpcionesPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.idp=navParams.get("id");
     this.nombre=navParams.get("nombre");
+    console.log("mirar"+this.nombre);
   }
 
   ionViewDidLoad() {
@@ -30,6 +31,6 @@ export class MenuOpcionesPage {
   }
 
   irconsultas(){
-    this.navCtrl.push(ConsultaReservadasPage,{id:this.idp});
+    this.navCtrl.push(ConsultaReservadasPage,{id:this.idp,nom:this.nombre});
   }
 }

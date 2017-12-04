@@ -43,7 +43,7 @@ export class HomePage {
           }
   
           if(cedulaDB=='ok'){
-            console.log("id"+this.idp);
+           // console.log("id"+this.idp+"nom"+this.nombre);
                this.navCtrl.push(MenuOpcionesPage,{id:this.idp,nombre:this.nombre+" "+this.apellido}); 
           }else{
             alert.present();

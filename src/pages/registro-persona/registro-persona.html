@@ -31,7 +31,7 @@
   
           <ion-item>
             <ion-label stacked>Fecha de Nacimiento</ion-label>
-            <ion-datetime ></ion-datetime>
+            <ion-datetime [(ngModel)]="userData.fecha"></ion-datetime>
           </ion-item>
 
           <ion-item>
@@ -53,14 +53,49 @@
                 <ion-label stacked>Estado Civil</ion-label>
                 <ion-input type="text" [(ngModel)]="userData.estadocivil"></ion-input>
               </ion-item>
-              <ion-item>
+              <!-- <ion-item>
                   <ion-label stacked>Genero</ion-label>
                   <ion-input type="text" [(ngModel)]="userData.genero"></ion-input>
+              </ion-item>-->
+
+              <ion-item>
+                  <ion-label>Genero</ion-label>
+                  <ion-select [(ngModel)]="userData.genero">
+                    <ion-option  value="M">Masculino</ion-option>
+                    <ion-option  value="F">Femenino</ion-option>
+                  </ion-select>
                 </ion-item>
-                 <ion-item>
+
+                <ion-item>
+                    <ion-label>Tipo de Sangre</ion-label>
+                    <ion-select [(ngModel)]="userData.tiposangre">
+                      <ion-option  value="O+">O+</ion-option>
+                      <ion-option  value="O-">O-</ion-option>
+                      <ion-option  value="A+">A+</ion-option>
+                      <ion-option  value="A-">A-</ion-option>
+                      <ion-option  value="B+">B+</ion-option>
+                      <ion-option  value="B-">B-</ion-option>
+                      <ion-option  value="AB+">AB+</ion-option>
+                      <ion-option  value="AB-">AB-</ion-option>
+                     </ion-select>
+                  </ion-item>
+
+                  <ion-item>
+                      <ion-label>EPS</ion-label>
+                      <ion-select [(ngModel)]="userData.eps">
+                        <ion-option  value="Emssanar">Emssanar</ion-option>
+                        <ion-option  value="SOS">SOS</ion-option>
+                        <ion-option  value="Coosalud">Coosalud</ion-option>
+                        <ion-option  value="Coomeva">Coomeva</ion-option>
+                        <ion-option  value="Asmesalud">Asmesalud</ion-option>
+                        <ion-option  value="Medimax">Medimax</ion-option>
+                      </ion-select>
+                    </ion-item>
+
+                 <!--<ion-item>
                     <ion-label stacked>Tipo de Sangre</ion-label>
                     <ion-input type="text" [(ngModel)]="userData.tiposangre"></ion-input>
-                  </ion-item>
+                  </ion-item>-->
           <ion-item>
             <ion-label stacked>Username</ion-label>
             <ion-input type="text" [(ngModel)]="userData.username"></ion-input>

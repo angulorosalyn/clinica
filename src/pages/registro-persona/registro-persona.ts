@@ -14,12 +14,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'registro-persona.html',
 })
 export class RegistroPersonaPage {
-  userData = {username: "",password: "", name: "",email: "",apellido:"", telefono: "", genero: "",tiposangre:"", direccion:"", estadocivil:""};
+  userData = {username: "",password: "", name: "",email: "",apellido:"", telefono: "", genero: "",tiposangre:"",fecha:"", direccion:"", estadocivil:"", eps:""};
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegistroPersonaPage');
   }
 
+  signup(){
+    console.log(this.userData);
+  }
 }

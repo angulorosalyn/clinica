@@ -16,9 +16,11 @@ import { TraerdatosProvider } from '../../providers/traerdatos/traerdatos';
 })
 export class ConsultaReservadasPage {
   persona_id:any;
+  nombrePaciente:any;
   listReservas:any;
   constructor(public navCtrl: NavController, public navParams: NavParams,public webservice:TraerdatosProvider) {
     this.persona_id= navParams.get("id");
+    this.nombrePaciente= navParams.get("nom");
     this.webservice.verReservas(this.persona_id).subscribe(rs=>{
       this.listReservas=rs;
      /// console.log(this.nomespecialidad.title);
