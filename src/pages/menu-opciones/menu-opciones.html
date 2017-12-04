@@ -7,14 +7,16 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>menuOpciones</ion-title>
+    <ion-title></ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-  <h1> usuario {{idp}}</h1>
-    <button ion-button full (click)="regcita()">Registrar Cita Medicas</button>
-    <button ion-button full (click)="irconsultas()">Ver mis Citas Medicas</button>
+<ion-content class="page-menu-opciones" padding>
+  <h1>BIENVENIDO A MEDIMOVIL</h1>
+  <h3>{{nombre}}</h3>
+  <p>Puedes registrar tu cita medica o consultar sí ya tiene una.</p>
+    <button  ion-button full (click)="regcita()">Registrar Cita Medicas</button>
+    <button class="btncustom" ion-button full (click)="irconsultas()">Ver mis Citas Medicas</button>
 </ion-content>

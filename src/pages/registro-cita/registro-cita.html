@@ -7,15 +7,15 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>registroCita</ion-title>
+    <ion-title>Registro Cita</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="registro-cita" padding>
 <h1>Reserva tú cita Medica</h1>
-  <p>Citas medicas para el mes de Diciembre {{ tipoMedico }}</p>
+  <p>Citas medicas para el mes de {{ mes }}</p>
  <div > </div>
     <ion-list radio-group [(ngModel)]="tipoMedico">
     
@@ -58,7 +58,7 @@
             <div class="col">Consultorio</div>
             <div class="col"></div>
           </div>
-          <div class="row" *ngFor="let medicohorario of horario">
+          <div class="row conttbl" *ngFor="let medicohorario of horario">
               <div class="col">{{medicohorario.medico}}</div>
             <div class="col">{{medicohorario.horainicial}}</div>
             <div class="col">{{medicohorario.consultorio}}</div>

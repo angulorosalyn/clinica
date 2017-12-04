@@ -1,5 +1,15 @@
 page-home {
     
- h1,p{ text-align: center}
- h1{padding-top:30%; }
+  .page-home{ background:#2e2e3c;
+.buttom-md{
+background-color: #3a568e;
+}
+ }  
+ h1,p{ text-align: center; color: whitesmoke}
+ h1{padding-top:3%; font-size:2.1em }
+ 
+.btncustom{
+    background-color: #3a568e;
+}
+.logo{margin-top:10%;position: relative; left: 30%;}
 } 

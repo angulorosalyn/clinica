@@ -10,7 +10,7 @@ page-registro-cita {
     border-bottom-style: none;
     border-right-style: none;
   }
-  
+  .conttbl .col{color: white;  text-align: center; padding-top:20px;  }
   .col:last-child {
     border-right: solid 1px grey;
   }
@@ -18,4 +18,9 @@ page-registro-cita {
   .row:last-child .col {
     border-bottom: solid 1px grey;
   }
+
+  .registro-cita{
+    background-color: #2e2e3c;
+  }
+  p,h1{color: whitesmoke}
 }

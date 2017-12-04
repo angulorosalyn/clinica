@@ -13,8 +13,8 @@
 </ion-header>
 
 
-<ion-content padding>
- <h5>Nombre del Paciente</h5>
+<ion-content class="consulta-reservadas" padding>
+ <h1>Nombre del Paciente</h1>
  <p>Lista de consultas realizadas</p>
     <div class="row header">
         <div class="col">Medico</div>        
@@ -24,7 +24,7 @@
         
         <div class="col"></div>
       </div>
-      <div class="row" *ngFor="let reservas of listReservas">
+      <div class="row conttbl" *ngFor="let reservas of listReservas">
           <div class="col">{{ reservas.medico}}</div>
         <div class="col">{{ reservas.consultorio }}</div>
         <div class="col">{{reservas.fecha}}</div>

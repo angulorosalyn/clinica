@@ -16,8 +16,10 @@ import{ConsultaReservadasPage} from '../consulta-reservadas/consulta-reservadas'
 })
 export class MenuOpcionesPage {
   idp:any;
+  nombre:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.idp=navParams.get("id");
+    this.nombre=navParams.get("nombre");
   }
 
   ionViewDidLoad() {

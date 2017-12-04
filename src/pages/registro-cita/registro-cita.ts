@@ -16,15 +16,26 @@ import { TraerdatosProvider } from '../../providers/traerdatos/traerdatos';
 })
 export class RegistroCitaPage {
   
+  
+
   tipoMedico:any;
   medicosEspecialistas:any;
   nomespecialidad:any; 
   agendaMedicoDia:any[]=[];
   idmedico_arg:number; 
   horario:any[]=[];
+  mes:any;
 persona_id:any;
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams,public webservice:TraerdatosProvider,private alert:AlertController,
   private toast:ToastController) {
+
+    let d = new Date();
+    let n = d.getMonth();
+    let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+    this.mes=meses[n];
+
      this.tipoMedico="esp";
       this.persona_id= navParams.get("id");
         this.webservice.getespecialidad().subscribe(rs=>{
