@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { TraerdatosProvider } from '../../providers/traerdatos/traerdatos';
 /**
  * Generated class for the RegistroPersonaPage page.
  *
@@ -14,8 +14,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'registro-persona.html',
 })
 export class RegistroPersonaPage {
-  userData = {username: "",password: "", name: "",email: "",apellido:"", telefono: "", genero: "",tiposangre:"",fecha:"", direccion:"", estadocivil:"", eps:""};
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  userData = {"documento":"","name": "","email": "","apellido":"", "telefono": "", "genero": "","tiposangre":"","fecha":"", "direccion":"", "estadocivil":"", "eps":""};
+  constructor(public navCtrl: NavController, public navParams: NavParams,public webservice:TraerdatosProvider) {
+    
     
   }
 
@@ -24,6 +25,11 @@ export class RegistroPersonaPage {
   }
 
   signup(){
+
+    this.webservice.registroUser(this.userData).subscribe(rs=>{
+      
+     /// console.log(this.nomespecialidad.title);
+    });
     console.log(this.userData);
   }
 }

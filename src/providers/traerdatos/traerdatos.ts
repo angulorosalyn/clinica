@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http,Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 /*
@@ -58,5 +58,22 @@ export class TraerdatosProvider {
 
       return this.http.get(this.api+'cancelarReserva.php?idreserva='+id+'&idagenda='+idagenda);
       
+    }
+
+    registroUser(datosUser){
+      /*console.log(this.api+'registroPersona.php?nombre='+datosUser.name+'&apellido='+datosUser.apellido+
+      '&dir='+datosUser.direccion+'&doc='+datosUser.documento+'&emil='+datosUser.email+'&eps='+datosUser.eps+
+      '&gen='+datosUser.genero+'&tel='+datosUser.telefono+'&tsangre='+datosUser.tiposangre+'&ecivil='+datosUser.estadicivi);
+
+      
+      return this.http.get(this.api+'registroPersona.php?nombre='+datosUser.name+'&apellido='+datosUser.apellido+
+      '&dir='+datosUser.direccion+'&doc='+datosUser.documento+'&emil='+datosUser.email+'&eps='+datosUser.eps+
+      '&gen='+datosUser.genero+'&tel='+datosUser.telefono+'&tsangre='+datosUser.tiposangre+'&ecivil='+datosUser.estadocivil).map(res => res.json());*/
+     var headers = new Headers();
+//headers.append("Accept", 'application/json');
+      headers.append("Content-Type","application/x-www-form-urlencoded" );
+      let options = new RequestOptions({ headers: headers,method:"POST" });
+      let datos=JSON.stringify(datosUser);
+      return this.http.post(this.api+'registroPersona.php',datos,options);
     }
 }

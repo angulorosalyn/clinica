@@ -29,7 +29,12 @@
               <ion-input type="text" [(ngModel)]="userData.apellido"></ion-input>
             </ion-item>
   
-          <ion-item>
+            <ion-item>
+              <ion-label stacked>Documento de Identidad</ion-label>
+              <ion-input type="text" [(ngModel)]="userData.documento"></ion-input>
+            </ion-item>
+  
+            <ion-item>
             <ion-label stacked>Fecha de Nacimiento</ion-label>
             <ion-datetime [(ngModel)]="userData.fecha"></ion-datetime>
           </ion-item>
@@ -49,14 +54,24 @@
               <ion-input type="text" [(ngModel)]="userData.telefono"></ion-input>
             </ion-item>
 
-            <ion-item>
+            <!-- <ion-item>
                 <ion-label stacked>Estado Civil</ion-label>
                 <ion-input type="text" [(ngModel)]="userData.estadocivil"></ion-input>
               </ion-item>
-              <!-- <ion-item>
+              <ion-item>
                   <ion-label stacked>Genero</ion-label>
                   <ion-input type="text" [(ngModel)]="userData.genero"></ion-input>
               </ion-item>-->
+
+              <ion-item>
+                <ion-label>Estado Civil</ion-label>
+                <ion-select [(ngModel)]="userData.estadocivil">
+                  <ion-option  value="casado">Casado</ion-option>
+                  <ion-option  value="soltero">Soltero</ion-option>
+                  <ion-option  value="viudo">Viudo</ion-option>
+                  <ion-option  value="union libre">Union Libre</ion-option>
+                </ion-select>
+              </ion-item>
 
               <ion-item>
                   <ion-label>Genero</ion-label>
@@ -69,14 +84,14 @@
                 <ion-item>
                     <ion-label>Tipo de Sangre</ion-label>
                     <ion-select [(ngModel)]="userData.tiposangre">
-                      <ion-option  value="O+">O+</ion-option>
-                      <ion-option  value="O-">O-</ion-option>
-                      <ion-option  value="A+">A+</ion-option>
-                      <ion-option  value="A-">A-</ion-option>
-                      <ion-option  value="B+">B+</ion-option>
-                      <ion-option  value="B-">B-</ion-option>
-                      <ion-option  value="AB+">AB+</ion-option>
-                      <ion-option  value="AB-">AB-</ion-option>
+                      <ion-option  value="3">O+</ion-option>
+                      <ion-option  value="6">O-</ion-option>
+                      <ion-option  value="1">A+</ion-option>
+                      <ion-option  value="4">A-</ion-option>
+                      <ion-option  value="2">B+</ion-option>
+                      <ion-option  value="5">B-</ion-option>
+                      <ion-option  value="7">AB+</ion-option>
+                      <ion-option  value="8">AB-</ion-option>
                      </ion-select>
                   </ion-item>
 
@@ -96,15 +111,7 @@
                     <ion-label stacked>Tipo de Sangre</ion-label>
                     <ion-input type="text" [(ngModel)]="userData.tiposangre"></ion-input>
                   </ion-item>-->
-          <ion-item>
-            <ion-label stacked>Username</ion-label>
-            <ion-input type="text" [(ngModel)]="userData.username"></ion-input>
-          </ion-item>
-  
-          <ion-item>
-            <ion-label stacked>Password</ion-label>
-            <ion-input type="password" [(ngModel)]="userData.password"></ion-input>
-          </ion-item>
+         
   
           <button ion-button full color="success" (click)="signup()">Sign up</button>
           <a href="#" (click)="login()">Login Page</a>

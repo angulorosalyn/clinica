@@ -37,7 +37,7 @@ export class ConsultaReservadasPage {
   cancelarReserva(id,idagenda){
 
     this.webservice.cancelarReserva(id,idagenda).subscribe(rs=>{
-      
+      this.navCtrl.pop();
      });
   }
 
