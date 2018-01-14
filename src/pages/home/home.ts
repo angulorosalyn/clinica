@@ -25,7 +25,7 @@ export class HomePage {
     {
       let alert = this.alert.create({
         title: 'Usuario no Registrado',
-        subTitle: 'El Usuario no se encuentra registrado en Medimovil',
+        subTitle: 'El Usuario no se encuentra registrado en Medimovil o no ha sido activado.',
         buttons: ['OK']
       });
       

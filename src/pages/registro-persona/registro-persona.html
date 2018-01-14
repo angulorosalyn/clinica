@@ -7,20 +7,20 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>RegistroPersona</ion-title>
+    <ion-title>Registro de usuarios</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="regUsuario" padding>
   
-         <h1>Registration</h1> 
-
+         <h1>Registro de usuarios</h1> 
+   <p>Los campos que contienen el signo (*) son obligatorios, por lo tanto deben de diligenciarlos</p>
          <ion-list>
 
           <ion-item>
-            <ion-label stacked>Nombre</ion-label>
+            <ion-label stacked>Nombre*</ion-label>
             <ion-input type="text" [(ngModel)]="userData.name"></ion-input>
           </ion-item>
 
@@ -30,7 +30,7 @@
             </ion-item>
   
             <ion-item>
-              <ion-label stacked>Documento de Identidad</ion-label>
+              <ion-label stacked>Documento de Identidad*</ion-label>
               <ion-input type="text" [(ngModel)]="userData.documento"></ion-input>
             </ion-item>
   
@@ -40,7 +40,7 @@
           </ion-item>
 
           <ion-item>
-              <ion-label stacked>Email</ion-label>
+              <ion-label stacked>Email*</ion-label>
               <ion-input type="text" [(ngModel)]="userData.email"></ion-input>
             </ion-item>
 
@@ -50,7 +50,7 @@
           </ion-item>
          
           <ion-item>
-              <ion-label stacked>Telefono</ion-label>
+              <ion-label stacked>Telefono*</ion-label>
               <ion-input type="text" [(ngModel)]="userData.telefono"></ion-input>
             </ion-item>
 
@@ -82,7 +82,7 @@
                 </ion-item>
 
                 <ion-item>
-                    <ion-label>Tipo de Sangre</ion-label>
+                    <ion-label>Tipo de Sangre *</ion-label>
                     <ion-select [(ngModel)]="userData.tiposangre">
                       <ion-option  value="3">O+</ion-option>
                       <ion-option  value="6">O-</ion-option>
@@ -113,8 +113,8 @@
                   </ion-item>-->
          
   
-          <button ion-button full color="success" (click)="signup()">Sign up</button>
-          <a href="#" (click)="login()">Login Page</a>
+          <button ion-button full color="success" (click)="signup()">Registrar</button>
+         
         </ion-list>
          
    

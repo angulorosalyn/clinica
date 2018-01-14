@@ -17,18 +17,18 @@
 <h1>Reserva tú cita Medica</h1>
   <p>Citas medicas para el mes de {{ mes }}</p>
  <div > </div>
-    <ion-list radio-group [(ngModel)]="tipoMedico">
+     <!--<ion-list radio-group [(ngModel)]="tipoMedico">
     
       <ion-item>
         <ion-label>Especialidad</ion-label>
         <ion-radio   value="esp"></ion-radio>
       </ion-item>
     
-      <ion-item>
+     <ion-item>
         <ion-label>General</ion-label>
         <ion-radio value="gen"></ion-radio>
       </ion-item>
-    </ion-list>
+    </ion-list>-->
 
       <ion-item *ngIf="tipoMedico=='esp'">
           <ion-label>Especialidad</ion-label>
